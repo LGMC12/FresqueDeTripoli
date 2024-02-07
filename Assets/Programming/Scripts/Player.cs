@@ -40,6 +40,15 @@ public class Player : MonoBehaviour
 		Move();	
 	}
 
+	private void OnTriggerEnter2D(Collider2D pCollided)
+	{
+		HarvestableObject lHO;
+		if (pCollided.gameObject.transform.parent.TryGetComponent<HarvestableObject>(out lHO))
+		{
+			lHO.OnCollisionWithPlayer();
+		}
+	}
+
 	private void OnDestroy()
 	{
 	}
