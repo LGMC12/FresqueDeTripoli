@@ -43,9 +43,15 @@ public class Player : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D pCollided)
 	{
 		HarvestableObject lHO;
+		Area lArea;
+
 		if (pCollided.gameObject.transform.parent.TryGetComponent<HarvestableObject>(out lHO))
 		{
 			lHO.OnCollisionWithPlayer();
+		}
+		else if (pCollided.gameObject.transform.parent.TryGetComponent<Area>(out lArea))
+		{
+			lArea.Unlock();
 		}
 	}
 
