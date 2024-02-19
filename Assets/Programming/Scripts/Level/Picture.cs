@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Picture : MonoBehaviour
 {
+	public static Action<Picture> OnUnlock;
+
 	[SerializeField] private SpriteRenderer _pixelatedImage;
 	[SerializeField] private SpriteRenderer _unpixelatedImage;
 
@@ -49,5 +51,7 @@ public class Picture : MonoBehaviour
 			Destroy(flower.gameObject);
 			--nImageRemaining;
 		}
+
+		OnUnlock?.Invoke(this);
 	}
 }
