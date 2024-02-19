@@ -1,43 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	private Vector3 _velocity = Vector3.zero;
+	[Header("Player Movement")]
+	[SerializeField] private float _speed = 1.0f;
+
+	[SerializeField] private float _accelerationDuration = 1.0f;
+	private float _accelerationTime = 0.0f;
+	[SerializeField] private AnimationCurve _accelerationCurve;
+
+	[Space]
+	[Header("Firing")]
+	[SerializeField] private Weapon _weapon;
+
+	[SerializeField] private GameObject _renderer;
 
 	void Start()
 	{
 	}
 
-	private void Move()
+	private void Shoot()
 	{
-		//transform.position += InputManager.Direction * 5f * Time.deltaTime;
-		if (DPad.downInput)
+		_weapon.Fire();
+	}
+
+	private void MoveAndRotate()
+	{
+		transform.position += InputManager.Instance.Direction * Time.deltaTime * 5.0f;
+
+		if (InputManager.Instance.Direction != Vector3.zero)
 		{
-			_velocity += Vector3.down;
-		}
-		else if (DPad.upInput)
-		{
-			_velocity += Vector3.up;
-		}
-		if (DPad.leftInput)
-		{
-			_velocity += Vector3.left;
-		}
-		else if (DPad.rightInput)
-		{
-			_velocity += Vector3.right;
+			_renderer.transform.rotation = Quaternion.Euler(0, 0, 
+				Mathf.Atan2(InputManager.Instance.Direction.y, InputManager.Instance.Direction.x) * Mathf.Rad2Deg);
 		}
 
-		transform.position += _velocity * Time.deltaTime * 5.0f;
-		_velocity = Vector3.zero;
 	}
 
 
 	void Update()
 	{
-		Move();	
+		MoveAndRotate();
+		if (InputManager.Instance.Action) Shoot();
 	}
 
 	private void OnTriggerEnter2D(Collider2D pCollided)
@@ -51,7 +57,7 @@ public class Player : MonoBehaviour
 		}
 		else if (pCollided.gameObject.transform.parent.TryGetComponent<Area>(out lArea))
 		{
-			lArea.Unlock();
+			lArea.OnPlayerCollision();
 		}
 	}
 

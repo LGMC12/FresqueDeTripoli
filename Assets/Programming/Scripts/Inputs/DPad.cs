@@ -18,20 +18,10 @@ public class DPad : MonoBehaviour
 	private Vector2 _axisInput;
 
 	public Vector2 AxisInput
-    {
-		get => _axisInput;
-		set
-        {
-			_axisInput = value;
-
-        }
-    }
-
-	void Start()
 	{
-
+		get => _axisInput;
+		set { _axisInput = value; }
 	}
-
 
 	void Update()
 	{
