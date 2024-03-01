@@ -29,12 +29,12 @@ public class Player : MonoBehaviour
 
 	private void MoveAndRotate()
 	{
-		transform.position += InputManager.Instance.Direction * Time.deltaTime * 5.0f;
+		transform.position += PlayModeInputManager.Instance.Direction * Time.deltaTime * 5.0f;
 
-		if (InputManager.Instance.Direction != Vector3.zero)
+		if (PlayModeInputManager.Instance.Direction != Vector3.zero)
 		{
 			_renderer.transform.rotation = Quaternion.Euler(0, 0, 
-				Mathf.Atan2(InputManager.Instance.Direction.y, InputManager.Instance.Direction.x) * Mathf.Rad2Deg);
+				Mathf.Atan2(PlayModeInputManager.Instance.Direction.y, PlayModeInputManager.Instance.Direction.x) * Mathf.Rad2Deg);
 		}
 
 	}
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		MoveAndRotate();
-		if (InputManager.Instance.Action) Shoot();
+		if (PlayModeInputManager.Instance.Action) Shoot();
 	}
 
 	private void OnTriggerEnter2D(Collider2D pCollided)

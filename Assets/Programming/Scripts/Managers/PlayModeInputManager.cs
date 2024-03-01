@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputManager : MonoBehaviour
+public class PlayModeInputManager : MonoBehaviour
 {
 	[SerializeField] private Player _player;
 	[SerializeField] private DPad _dPad;
@@ -13,9 +13,9 @@ public class InputManager : MonoBehaviour
 
 	[SerializeField] private bool usingJoystick = false;
 
-	private static InputManager _instance;
+	private static PlayModeInputManager _instance;
 
-	public static InputManager Instance
+	public static PlayModeInputManager Instance
 	{
 		get => _instance;
 		private set { _instance = value; }
@@ -32,22 +32,6 @@ public class InputManager : MonoBehaviour
 	{
 		_dPad.gameObject.SetActive(!usingJoystick);
 		_joystick.gameObject.SetActive(usingJoystick);
-	}
-
-	public Touch TouchInput0
-	{
-		get
-		{
-			Touch lTouch;
-
-			if (Input.touchCount > 0)
-			{
-				lTouch = Input.GetTouch(0);
-			}
-			else lTouch = new Touch();
-
-			return lTouch;
-		}
 	}
 
 	public Vector3 Direction

@@ -42,11 +42,14 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Level
-    uniqueID: 4082956349
+    uniqueID: 4152566429
     locked: 0
   - name: Gameplay
-    uniqueID: 3690399237
+    uniqueID: 1616647945
     locked: 0
   - name: Player
-    uniqueID: 1654589355
+    uniqueID: 3782614115
+    locked: 0
+  - name: UI
+    uniqueID: 3822918827
     locked: 0
