@@ -32,6 +32,29 @@ public class UIManager : MonoBehaviour
 		SplashScreenAnimationEvent.OnClosed += Splash_Close;
 
 		LanguageScreen.OnLanguageSelected += SelectedLanguage;
+
+		MainScreen.OnPlay += StartGame;
+		MainScreen.OnExplore += StartExplore;
+		MainScreen.OnAbout += Open_About;
+	}
+
+	private void Open_About()
+	{
+		UIScreen.Close(ScreenChannel.MAIN0);
+		UIScreen.Open(ScreenChannel.OTHER1);
+	}
+
+	private void StartExplore()
+	{
+		UIScreen.Close(ScreenChannel.MAIN0);
+		_compo.SetActive(true);
+	}
+
+	private void StartGame()
+	{
+		SceneManager.LoadScene(1, LoadSceneMode.Single);
+	}
+
 	private void SelectedLanguage()
 	{
 		UIScreen.Close(ScreenChannel.OTHER0);
@@ -57,5 +80,9 @@ public class UIManager : MonoBehaviour
 		SplashScreenAnimationEvent.OnClosed -= Splash_Close;
 
 		LanguageScreen.OnLanguageSelected -= SelectedLanguage;
+
+		MainScreen.OnPlay -= StartGame;
+		MainScreen.OnExplore -= StartExplore;
+		MainScreen.OnAbout -= Open_About;
 	}
 }
