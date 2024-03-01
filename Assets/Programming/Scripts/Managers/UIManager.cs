@@ -30,6 +30,12 @@ public class UIManager : MonoBehaviour
 		UIScreen.Open(ScreenChannel.SPLASH);
 
 		SplashScreenAnimationEvent.OnClosed += Splash_Close;
+
+		LanguageScreen.OnLanguageSelected += SelectedLanguage;
+	private void SelectedLanguage()
+	{
+		UIScreen.Close(ScreenChannel.OTHER0);
+		UIScreen.Open(ScreenChannel.MAIN0);
 	}
 
 	private void Splash_Close()
@@ -50,5 +56,6 @@ public class UIManager : MonoBehaviour
 	{
 		SplashScreenAnimationEvent.OnClosed -= Splash_Close;
 
+		LanguageScreen.OnLanguageSelected -= SelectedLanguage;
 	}
 }
