@@ -5,13 +5,6 @@ using TMFunds.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ELangauge
-{
-	French, 
-	Arabic, 
-	English
-}
-
 public class LanguageScreen : ScreenUI
 {
     public static Action OnLanguageSelected;
@@ -24,13 +17,26 @@ public class LanguageScreen : ScreenUI
     {
         base.Start();
 
-        _french.OnPlay += SetLanguage;
-        _arabic.OnPlay += SetLanguage;
-        _english.OnPlay += SetLanguage;
+        _french.OnPlay += French;
+        _arabic.OnPlay += Arabic;
+        _english.OnPlay += English;
     }
 
-    private void SetLanguage()
+    private void English()
     {
+        LocalizationManager.CurrentLanguage = ELanguage.English;
+        OnLanguageSelected?.Invoke();
+    }
+
+    private void Arabic()
+    {
+        LocalizationManager.CurrentLanguage = ELanguage.Arabic;
+        OnLanguageSelected?.Invoke();
+    }
+
+    private void French()
+    {
+        LocalizationManager.CurrentLanguage = ELanguage.French;
         OnLanguageSelected?.Invoke();
     }
 
@@ -38,8 +44,8 @@ public class LanguageScreen : ScreenUI
     {
         base.OnDestroy();
 
-        _french.OnPlay -= SetLanguage;
-        _arabic.OnPlay -= SetLanguage;
-        _english.OnPlay -= SetLanguage;
+        _french.OnPlay -= French;
+        _arabic.OnPlay -= Arabic;
+        _english.OnPlay -= English;
     }
 }
