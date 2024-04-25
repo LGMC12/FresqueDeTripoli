@@ -47,7 +47,7 @@ namespace TMFunds.UI
             if (clickable)
             {
                 OnPlay?.Invoke();
-                OnClick();
+                Clicking();
                 if (!selected)
                 {
                     selected = true;
@@ -57,7 +57,7 @@ namespace TMFunds.UI
             }
         }
 
-        protected virtual void OnClick(){}
+        protected virtual void Clicking(){}
 
         protected virtual void OnRelease(){}
 

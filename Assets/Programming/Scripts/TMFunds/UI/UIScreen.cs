@@ -15,7 +15,8 @@ namespace TMFunds.UI
         public ScreenChannel Channel => channel;
 
         [Header("Panel")]
-        [SerializeField] protected UIButton[] buttons;
+        [SerializeField] protected List<UIButton> buttons;
+        public List<UIButton> buttonList { get => buttons; }
 
         new protected void Awake()
         {
@@ -34,7 +35,7 @@ namespace TMFunds.UI
             OnClose();
             animator.SetBool(animatorPrompt, false);
             StartCoroutine(DestroyAfter(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length));
-            for(int i = buttons.Length - 1; i >= 0; i--)
+            for(int i = buttons.Count - 1; i >= 0; i--)
             {
                 buttons[i].clickable = false;
             }
@@ -57,7 +58,7 @@ namespace TMFunds.UI
             OnOpen();
             OnPlay();
             animator.SetBool(animatorPrompt, true);
-            for (int i = buttons.Length - 1; i >= 0; i--)
+            for (int i = buttons.Count - 1; i >= 0; i--)
             {
                 buttons[i].clickable = true;
             }

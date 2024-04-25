@@ -21,7 +21,7 @@ namespace TMFunds.UI
             animator.SetBool(buttonShowPrompt, false);
         }
 
-        protected override void OnClick()
+        protected override void Clicking()
         {
             animator.SetTrigger(clickPrompt);
             StartCoroutine(DestroyAfter(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length));
