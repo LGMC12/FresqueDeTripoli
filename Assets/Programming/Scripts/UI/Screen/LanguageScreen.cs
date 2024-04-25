@@ -4,48 +4,52 @@ using System.Collections.Generic;
 using TMFunds.UI;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LanguageScreen : ScreenUI
 {
-    public static Action OnLanguageSelected;
+	public static Action OnLanguageSelected;
 
-	[SerializeField] private UIButton _french;
-	[SerializeField] private UIButton _arabic;
-	[SerializeField] private UIButton _english;
+	[SerializeField] private AnimatedButton _french;
+	[SerializeField] private AnimatedButton _arabic;
+	[SerializeField] private AnimatedButton _english;
 
-    protected override void Start()
-    {
-        base.Start();
+	protected override void Start()
+	{
+		base.Start();
 
-        _french.OnPlay += French;
-        _arabic.OnPlay += Arabic;
-        _english.OnPlay += English;
-    }
+		_french.OnPlay += French;
+		_arabic.OnPlay += Arabic;
+		_english.OnPlay += English;
 
-    private void English()
-    {
-        LocalizationManager.CurrentLanguage = ELanguage.English;
-        OnLanguageSelected?.Invoke();
-    }
+		//_arabic.GetComponentInChildren<TextMeshProUGUI>().text = ArabicSupport.ArabicFixer.Fix(_arabic.GetComponentInChildren<TextMeshProUGUI>().text);
+		print(_arabic.GetComponentInChildren<TextMeshProUGUI>().text);
+	}
 
-    private void Arabic()
-    {
-        LocalizationManager.CurrentLanguage = ELanguage.Arabic;
-        OnLanguageSelected?.Invoke();
-    }
+	private void English()
+	{
+		LocalizationManager.CurrentLanguage = ELanguage.English;
+		OnLanguageSelected?.Invoke();
+	}
 
-    private void French()
-    {
-        LocalizationManager.CurrentLanguage = ELanguage.French;
-        OnLanguageSelected?.Invoke();
-    }
+	private void Arabic()
+	{
+		LocalizationManager.CurrentLanguage = ELanguage.Arabic;
+		OnLanguageSelected?.Invoke();
+	}
 
-    protected override void OnDestroy()
-    {
-        base.OnDestroy();
+	private void French()
+	{
+		LocalizationManager.CurrentLanguage = ELanguage.French;
+		OnLanguageSelected?.Invoke();
+	}
 
-        _french.OnPlay -= French;
-        _arabic.OnPlay -= Arabic;
-        _english.OnPlay -= English;
-    }
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+
+		_french.OnPlay -= French;
+		_arabic.OnPlay -= Arabic;
+		_english.OnPlay -= English;
+	}
 }

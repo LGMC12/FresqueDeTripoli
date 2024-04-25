@@ -12,7 +12,7 @@ public class LocalizationManager : MonoBehaviour
 {
 	public static Action OnLanguageChanged;
 
-	private static ELanguage _currentLanguage = ELanguage.French;
+	private static ELanguage _currentLanguage = ELanguage.Arabic;
 
 	public static ELanguage CurrentLanguage
     {

@@ -27,12 +27,15 @@ public class LocalizedText : MonoBehaviour
 
     private void LocalizationManager_OnLanguageChanged()
 	{
-		_textMeshPro.text = ArabicFixer.Fix(_localizedItem[LocalizationManager.CurrentLanguage]);
+		if (LocalizationManager.CurrentLanguage == ELanguage.Arabic)
+			_textMeshPro.text = ArabicFixer.Fix(_localizedItem[LocalizationManager.CurrentLanguage]);
+		else
+			_textMeshPro.text = _localizedItem[LocalizationManager.CurrentLanguage];
 	}
 
     void Start()
 	{
-		LocalizationManager_OnLanguageChanged();
+		//LocalizationManager_OnLanguageChanged();
 	}
 
     private void OnDestroy()

@@ -36,18 +36,60 @@ public class UIManager : MonoBehaviour
 		MainScreen.OnPlay += StartGame;
 		MainScreen.OnExplore += StartExplore;
 		MainScreen.OnAbout += Open_About;
+		MainScreen.OnSettings += OpenSettings;
+
+		SettingsScreen.OnBack += CloseSettings;
+
+		AboutScreen.OnBack += CloseAbout;
+
+		CompositionSelector.OnBack += CloseCompositionSelector;
+		CompositionSelector.OnCompositionSelected += OpenCompostionHud;
+
+		CompositionHud.OnBack += CloseCompositionHud;
 	}
 
-	private void Open_About()
+    private void OpenCompostionHud(int obj)
+    {
+		UIScreen.Close(ScreenChannel.MAIN1);
+		UIScreen.Open(ScreenChannel.HUD1);
+    }
+
+    private void CloseCompositionHud()
+    {
+		UIScreen.Close(ScreenChannel.HUD1);
+		UIScreen.Open(ScreenChannel.MAIN1);
+    }
+
+    private void CloseCompositionSelector()
+    {
+		UIScreen.Close(ScreenChannel.MAIN1);
+		UIScreen.Open(ScreenChannel.MAIN0);
+    }
+
+    private void CloseAbout()
+    {
+		UIScreen.Close(ScreenChannel.OTHER1);
+    }
+
+    private void CloseSettings()
+    {
+		UIScreen.Close(ScreenChannel.OPTION0);
+    }
+
+    private void OpenSettings()
+    {
+		UIScreen.Open(ScreenChannel.OPTION0);
+    }
+
+    private void Open_About()
 	{
-		UIScreen.Close(ScreenChannel.MAIN0);
 		UIScreen.Open(ScreenChannel.OTHER1);
 	}
 
 	private void StartExplore()
 	{
 		UIScreen.Close(ScreenChannel.MAIN0);
-		_compo.SetActive(true);
+		UIScreen.Open(ScreenChannel.MAIN1);
 	}
 
 	private void StartGame()
@@ -84,5 +126,15 @@ public class UIManager : MonoBehaviour
 		MainScreen.OnPlay -= StartGame;
 		MainScreen.OnExplore -= StartExplore;
 		MainScreen.OnAbout -= Open_About;
+		MainScreen.OnSettings -= OpenSettings;
+
+		SettingsScreen.OnBack -= CloseSettings;
+
+		AboutScreen.OnBack -= CloseAbout;
+
+		CompositionSelector.OnBack -= CloseCompositionSelector;
+		CompositionSelector.OnCompositionSelected -= OpenCompostionHud;
+
+		CompositionHud.OnBack -= CloseCompositionHud;
 	}
 }
