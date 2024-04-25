@@ -5,7 +5,10 @@ using Touch = UnityEngine.Touch;
 
 public class ExploreModeInputManager : MonoBehaviour
 {
-    public static Touch TouchInput0
+	private static Vector3 _mouseLastPosition;
+	private static Vector3 _mouseDeltaPosition;
+
+	public static Touch TouchInput0
 	{
 		get
 		{
@@ -36,4 +39,20 @@ public class ExploreModeInputManager : MonoBehaviour
 			return lTouch;
 		}
 	}
+
+	public static Vector3 MouseDeltaPosition
+    {
+		get => _mouseDeltaPosition;
+    }
+
+    private void Start()
+    {
+		_mouseLastPosition = Input.mousePosition;
+    }
+
+    private void Update()
+    {
+		_mouseDeltaPosition = _mouseLastPosition - Input.mousePosition;
+		_mouseLastPosition = Input.mousePosition;
+    }
 }
