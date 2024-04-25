@@ -8,56 +8,38 @@ public class Player : MonoBehaviour
 	[Header("Player Movement")]
 	[SerializeField] private float _speed = 1.0f;
 
-	[SerializeField] private float _accelerationDuration = 1.0f;
-	private float _accelerationTime = 0.0f;
-	[SerializeField] private AnimationCurve _accelerationCurve;
-
-	[Space]
-	[Header("Firing")]
-	[SerializeField] private Weapon _weapon;
-
-	[SerializeField] private GameObject _renderer;
+	private Vector3 _direction = Vector3.right;
 
 	void Start()
 	{
 	}
 
-	private void Shoot()
-	{
-		_weapon.Fire();
-	}
-
 	private void MoveAndRotate()
 	{
-		transform.position += PlayModeInputManager.Instance.Direction * Time.deltaTime * 5.0f;
-
-		if (PlayModeInputManager.Instance.Direction != Vector3.zero)
-		{
-			_renderer.transform.rotation = Quaternion.Euler(0, 0, 
-				Mathf.Atan2(PlayModeInputManager.Instance.Direction.y, PlayModeInputManager.Instance.Direction.x) * Mathf.Rad2Deg);
-		}
-
+		transform.position += _direction * Time.deltaTime * _speed;
 	}
 
+	private void SetDirection()
+    {
+        if (PlayModeInputManager.Instance.Direction != Vector3.zero)
+        {
+			_direction = PlayModeInputManager.Instance.Direction;
+		}
+	}
 
 	void Update()
 	{
+		SetDirection();
 		MoveAndRotate();
-		if (PlayModeInputManager.Instance.Action) Shoot();
 	}
 
 	private void OnTriggerEnter2D(Collider2D pCollided)
 	{
 		HarvestableObject lHO;
-		Area lArea;
 
 		if (pCollided.gameObject.transform.parent.TryGetComponent<HarvestableObject>(out lHO))
 		{
 			lHO.OnCollisionWithPlayer();
-		}
-		else if (pCollided.gameObject.transform.parent.TryGetComponent<Area>(out lArea))
-		{
-			lArea.OnPlayerCollision();
 		}
 	}
 

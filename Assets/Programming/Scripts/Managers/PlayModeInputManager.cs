@@ -6,14 +6,12 @@ using UnityEngine.UI;
 
 public class PlayModeInputManager : MonoBehaviour
 {
-	[SerializeField] private Player _player;
-	[SerializeField] private DPad _dPad;
-	[SerializeField] private FloatingJoystick _joystick;
-	[SerializeField] private ActionButton _actionButton;
-
-	[SerializeField] private bool usingJoystick = false;
-
 	private static PlayModeInputManager _instance;
+
+	[SerializeField] private float _minDistanceForHorizontalScroll;
+	[SerializeField] private float _maxDistanceForHorizontalScroll;
+	[SerializeField] private float _minDistanceForVerticalScroll;
+	[SerializeField] private float _maxDistanceForVerticalScroll;
 
 	public static PlayModeInputManager Instance
 	{
@@ -26,23 +24,46 @@ public class PlayModeInputManager : MonoBehaviour
 		DontDestroyOnLoad(this);
 		Instance = this;
 	}
-
-
-	private void Start()
+	private Touch TouchInput0
 	{
-		_dPad.gameObject.SetActive(!usingJoystick);
-		_joystick.gameObject.SetActive(usingJoystick);
+		get
+		{
+			Touch lTouch;
+
+			if (Input.touchCount > 0)
+			{
+				lTouch = Input.GetTouch(0);
+			}
+			else lTouch = new Touch();
+
+			return lTouch;
+		}
 	}
 
 	public Vector3 Direction
 	{
 		get
 		{
-			if (usingJoystick) return new Vector3(Joystick.Input.x, Joystick.Input.y, 0);
-			return new Vector3(Convert.ToInt32(DPad.rightInput) - Convert.ToInt32(DPad.leftInput),
-				Convert.ToInt32(DPad.upInput) - Convert.ToInt32(DPad.downInput), 0);
+			Vector3 lDir = Vector3.zero;
+#if UNITY_ANDROID
+
+			Vector3 lDelta = TouchInput0.deltaPosition.normalized;
+
+            if (Mathf.Abs(lDelta.x) > Mathf.Abs(lDelta.y))
+            {
+				lDir = new Vector3(Mathf.RoundToInt(TouchInput0.deltaPosition.normalized.x), 0, 0);
+			}
+            else
+            {
+				lDir = new Vector3(0, Mathf.RoundToInt(TouchInput0.deltaPosition.normalized.y), 0);
+			}
+#endif
+#if UNITY_EDITOR
+			lDir = new Vector3(Convert.ToInt32(Input.GetKey(KeyCode.D)) - Convert.ToInt32(Input.GetKey(KeyCode.Q)),
+				Convert.ToInt32(Input.GetKey(KeyCode.Z)) - Convert.ToInt32(Input.GetKey(KeyCode.S)), 0);
+
+#endif
+			return lDir;
 		}
 	}
-
-	public bool Action => _actionButton.IsClicked;
 }
