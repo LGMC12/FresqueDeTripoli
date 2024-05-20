@@ -670,12 +670,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "J\u2019ai grandi \xE0\u0300Nice et pris mes premi\xE8res photographies
-        sous les lumi\xE8res du Cap Corse \xE0\u0300 l\u2019\xE2ge de huit ans. "
+      value: "J'ai grandi \xE0 Nice et pris mes premi\xE8res photographies sous les
+        lumi\xE8res du Cap Corse \xE0 l\u2019\xE2ge de huit ans."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -695,7 +695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -799,7 +799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: -178
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -823,8 +823,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "J\u2019ai grandi \xE0\u0300Nice et pris mes premi\xE8res photographies
-        sous les lumi\xE8res du Cap Corse \xE0\u0300 l\u2019\xE2ge de huit ans. "
+      value: "J'ai grandi \xE0 Nice et pris mes premi\xE8res photographies sous les
+        lumi\xE8res du Cap Corse \xE0 l\u2019\xE2ge de huit ans."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: I grew up in Nice and took my first photographs under the lights of
+        Cap Corse at the age of eight.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -846,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -866,7 +871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -970,7 +975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -925
+      value: -1651
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -996,6 +1001,10 @@ PrefabInstance:
       propertyPath: _text.Array.data[0]
       value: 'Chacune vient donner aux autres plus de nuances. '
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Each one gives the others more nuances.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &3128008201620938404 stripped
@@ -1012,12 +1021,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "Cliquez sur _JOUER pour d\xE9marrer le jeu Pac-Kaak\xE9, uniquement
+      value: "Cliquez sur JOUER pour d\xE9marrer le jeu Pac-Kaak\xE9, uniquement
         disponible sur l'application. "
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -1037,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -1141,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1375
+      value: -2431
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1165,8 +1174,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "Cliquez sur _JOUER pour d\xE9marrer le jeu Pac-Kaak\xE9, uniquement
+      value: "Cliquez sur JOUER pour d\xE9marrer le jeu Pac-Kaak\xE9, uniquement
         disponible sur l'application. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: "Click on PLAY to start the Pac-Kaak\xE9 game, only available on the
+        application."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -1184,13 +1198,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "C\u2019est dans ce cadre que le programme Art et Sant\xE9 soutient
-        la Fresque de Tripoli. Sur bien des niveaux, la Fresque de Tripoli est, et
-        peut permettre un travail de m\xE9moire. "
+      value: "C'est dans ce cadre que le programme Art et Sant\xE9 soutient la Fresque
+        de Tripoli. Sur bien des niveaux, la Fresque de Tripoli est, et peut permettre
+        un travail de m\xE9moire."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -1210,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -1314,7 +1328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1980
+      value: -3459
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1338,9 +1352,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "C\u2019est dans ce cadre que le programme Art et Sant\xE9 soutient
-        la Fresque de Tripoli. Sur bien des niveaux, la Fresque de Tripoli est, et
-        peut permettre un travail de m\xE9moire. "
+      value: "C'est dans ce cadre que le programme Art et Sant\xE9 soutient la Fresque
+        de Tripoli. Sur bien des niveaux, la Fresque de Tripoli est, et peut permettre
+        un travail de m\xE9moire."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: It is in this context that the Art and Health program supports the Tripoli
+        Fresco. On many levels, the Tripoli Fresco is, and can allow for work on
+        memory.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -1362,7 +1382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -1382,7 +1402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -1486,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -970
+      value: -1760
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1512,6 +1532,10 @@ PrefabInstance:
       propertyPath: _text.Array.data[0]
       value: "Chaque version est aussi une exp\xE9rience diff\xE9rente. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Each version is also a different experience.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &1218709302080684686 stripped
@@ -1534,7 +1558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -1554,7 +1578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -1658,7 +1682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -380
+      value: -663
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1686,6 +1710,12 @@ PrefabInstance:
         une grande diversit\xE9 d\u2019images, allant des contextes g\xE9ographiques
         de la ville, \xE0 des sc\xE8nes de la vie quotidienne, ainsi que des portraits. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Photographed between 2021 and 2022, the Tripoli Fresco presents a wide
+        diversity of images, ranging from geographic contexts of the city, to scenes
+        of daily life, as well as portraits.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &2288086215892052473 stripped
@@ -1706,7 +1736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -1726,7 +1756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -1830,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1480
+      value: -2583
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1856,6 +1886,10 @@ PrefabInstance:
       propertyPath: _text.Array.data[0]
       value: 'Vincent Genet. '
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Vincent Genet.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &493168173494176355 stripped
@@ -1872,13 +1906,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "L\u2019objectif est de favoriser l\u2019enseignement, l\u2019\xE9change
-        et le partage autour de la m\xE9moire, de la motivation et de la sant\xE9
-        collective ou individuelle. "
+      value: "L'objectif est de favoriser l'enseignement, l'\xE9change et le partage
+        autour de la m\xE9moire, de la motivation et de la sant\xE9 collective ou
+        individuelle."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -1898,7 +1932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -2002,7 +2036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1820
+      value: -3161
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2026,9 +2060,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "L\u2019objectif est de favoriser l\u2019enseignement, l\u2019\xE9change
-        et le partage autour de la m\xE9moire, de la motivation et de la sant\xE9
-        collective ou individuelle. "
+      value: "L'objectif est de favoriser l'enseignement, l'\xE9change et le partage
+        autour de la m\xE9moire, de la motivation et de la sant\xE9 collective ou
+        individuelle."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: The objective is to promote teaching, exchange and sharing around memory,
+        motivation and collective or individual health.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -2051,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -2071,7 +2110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -2175,7 +2214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -520
+      value: -895
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2202,6 +2241,11 @@ PrefabInstance:
       value: "La direction documentaire de la Fresque est indissociable de l\u2019exp\xE9rience
         personnelle. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: The documentary direction of the Fresco is inseparable from personal
+        experience.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &123985443885343328 stripped
@@ -2218,12 +2262,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "Il est donc probable que dans ces images, c\u2019est moi que vous regarderez
-        autant que les habitantes et habitants de Tripoli. "
+      value: Il est donc probable que dans ces images, c'est moi que vous regarderez
+        autant que les habitantes et habitants de Tripoli.
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -2243,7 +2287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -2347,7 +2391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -620
+      value: -1087
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2371,8 +2415,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "Il est donc probable que dans ces images, c\u2019est moi que vous regarderez
-        autant que les habitantes et habitants de Tripoli. "
+      value: Il est donc probable que dans ces images, c'est moi que vous regarderez
+        autant que les habitantes et habitants de Tripoli.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: It is therefore likely that in these images, it is me that you will
+        look at as much as the inhabitants of Tripoli.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -2395,7 +2444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -2415,7 +2464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -2519,7 +2568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -740
+      value: -1285
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2546,6 +2595,11 @@ PrefabInstance:
       value: "Moi en train de d\xE9couvrir na\xEFvement, de faire des erreurs, d\u2019h\xE9siter,
         de me corriger et d\u2019approfondir avec celles et ceux que je rencontre. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Me naively discovering, making mistakes, hesitating, correcting myself
+        and delving deeper with those I meet.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &893303807789172633 stripped
@@ -2569,7 +2623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -2589,7 +2643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -2693,7 +2747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1640
+      value: -2864.9998
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2722,6 +2776,12 @@ PrefabInstance:
         projets de recherche, de conf\xE9rences, de groupes de discussion, d\u2019ouvrages,
         d\u2019applications et d\u2019expositions. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: "The \"Art et Sant\xE9\" program of the IA association (Innovation Alzheimer
+        \u2013 Affect \u2013 Autism) uses artistic creation in research projects,
+        conferences, discussion groups, books, applications and exhibitions."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &8563153875840813823 stripped
@@ -2744,7 +2804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -2764,7 +2824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -2868,7 +2928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2130
+      value: -3689
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2896,6 +2956,11 @@ PrefabInstance:
         pr\xE9cis, elles demandent \xE0 celles et ceux qui les regardent d\u2019\xEAtre
         actifs. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: The photographs being composed, assembled in a precise order, they ask
+        those who look at them to be active.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &8372565281797081106 stripped
@@ -2917,7 +2982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -2937,7 +3002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -3041,7 +3106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -860
+      value: -1515
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3068,6 +3133,11 @@ PrefabInstance:
       value: "Il existe diff\xE9rentes versions de la Fresque : une exposition, un
         livre, et une s\xE9rie de vid\xE9os. "
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: 'There are different versions of the Fresco: an exhibition, a book,
+        and a series of videos.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &8359805888694618025 stripped
@@ -3084,12 +3154,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "En page d\u2019accueil, _EXPLORER vous permet d'acc\xE9der aux neuf
+      value: "En page d\u2019accueil, EXPLORER vous permet d'acc\xE9der aux neuf
         compositions de photographies, bases des sc\xE9nographies de l\u2019exposition."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -3109,7 +3179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -3213,7 +3283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1150
+      value: -2081
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3237,8 +3307,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "En page d\u2019accueil, _EXPLORER vous permet d'acc\xE9der aux neuf
-        compositions de photographies, bases des sc\xE9nographies de l\u2019exposition."
+      value: "En page d'accueil, EXPLORER vous permet d'acc\xE9der aux neuf compositions
+        de photographies, bases des sc\xE9nographies de l\u2019exposition."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: On the home page, EXPLORE allows you to access the nine compositions
+        of photographs, the basis of the exhibition scenographies.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -3256,12 +3331,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "Vingt-et-un an plus tard, n\u2019ayant jamais v\xE9cu \xE0\u0300 l\u2019\xE9tranger,
+      value: "Vingt-et-un an plus tard, n'ayant jamais v\xE9cu \xE0 l\u2019\xE9tranger,
         je suis parti pour Tripoli, au Liban, ne sachant presque rien sur cette ville."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -3281,7 +3356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -3385,7 +3460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -220
+      value: -362
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3409,8 +3484,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "Vingt-et-un an plus tard, n\u2019ayant jamais v\xE9cu a\u0300 l\u2019\xE9tranger,
+      value: "Vingt-et-un an plus tard, n'ayant jamais v\xE9cu \xE0 l\u2019\xE9tranger,
         je suis parti pour Tripoli, au Liban, ne sachant presque rien sur cette ville."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Twenty-one years later, having never lived abroad, I left for Tripoli,
+        Lebanon, knowing almost nothing about the city.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -3434,7 +3514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -3454,7 +3534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -3558,7 +3638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2285
+      value: -3931.0005
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3586,6 +3666,12 @@ PrefabInstance:
         parcours pour le regard \xBB o\xF9 la m\xE9moire, et plus g\xE9n\xE9ralement
         les sens jouent un r\xF4le premier."
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: "We could speak of the compositions of the Fresco as a \u201Cjourney
+        for the gaze\u201D where memory, and more generally the senses, play a primary
+        role."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &7694741426651309007 stripped
@@ -3607,7 +3693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -3627,7 +3713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -3731,7 +3817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1275
+      value: -2267
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3758,6 +3844,11 @@ PrefabInstance:
       value: "Il y a \xE9galement un lien pour regarder la s\xE9rie de vid\xE9os,
         se procurer le livre et consulter les archives de la Fresque."
       objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: There is also a link to watch the video series, purchase the book and
+        consult the Fresco archives.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
 --- !u!224 &6307926490384554226 stripped
@@ -3774,12 +3865,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "L\u2019application Fresque de Tripoli est un lien entre ces diff\xE9rentes
-        versions. "
+      value: "L'application Fresque de Tripoli est un lien entre ces diff\xE9rentes
+        versions."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -3799,7 +3890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -3903,7 +3994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1035
+      value: -1921
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3927,8 +4018,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "L\u2019application Fresque de Tripoli est un lien entre ces diff\xE9rentes
-        versions. "
+      value: "L'application Fresque de Tripoli est un lien entre ces diff\xE9rentes
+        versions."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: The Fresco of Tripoli application is a link between these different
+        versions.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}
@@ -4071,11 +4167,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_text
-      value: "Je suis apparemment li\xE9 \xE0\u0300la M\xE9dit\xE9ran\xE9e."
+      value: "Je suis apparemment li\xE9 \xE0 la M\xE9diterran\xE9e."
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontAsset
@@ -4091,7 +4187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_sharedMaterial
@@ -4191,7 +4287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: -52
       objectReference: {fileID: 0}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4216,6 +4312,10 @@ PrefabInstance:
     - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: _text.Array.data[0]
       value: "Je suis apparemment li\xE9 \xE0\u0300la M\xE9dit\xE9ran\xE9e."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443285814136722168, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: I am apparently linked to the Mediterranean.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed481ca0be4c24189b101674079516, type: 3}

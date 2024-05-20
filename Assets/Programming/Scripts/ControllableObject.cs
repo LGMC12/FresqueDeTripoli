@@ -5,15 +5,15 @@ using UnityEngine;
 public class ControllableObject : MonoBehaviour
 {
 	[Header("Scrolling Speed")]
-	[SerializeField] private float _minVerticalSpeed = 1.0f;
-	[SerializeField] private float _minHorizontalSpeed = 1.0f;
-	[SerializeField] private float _maxVerticalSpeed = 1.0f;
-	[SerializeField] private float _maxHorizontalSpeed = 1.0f;
+	[SerializeField] private float _minVerticalSpeed = 15.0f;
+	[SerializeField] private float _minHorizontalSpeed = 10.0f;
+	[SerializeField] private float _maxVerticalSpeed = 300.0f;
+	[SerializeField] private float _maxHorizontalSpeed = 350.0f;
 
 	[Header("Zoom Parameters")]
-	[SerializeField] private float _zoomValue = 1.0f;
-	[SerializeField] private float _minZoom = 0.0f;
-	[SerializeField] private float _maxZoom = 1.0f;
+	[SerializeField] private float _zoomValue = 10.0f;
+	[SerializeField] private float _minZoom = 40.0f;
+	[SerializeField] private float _maxZoom = 500.0f;
 
 	[Header("Distance for scrolling")]
 	[SerializeField] private float _minDistanceForHorizontalScroll;
@@ -21,11 +21,42 @@ public class ControllableObject : MonoBehaviour
 	[SerializeField] private float _minDistanceForVerticalScroll;
 	[SerializeField] private float _maxDistanceForVerticalScroll;
 
+	private Vector3 _startposition;
+
 	private float _lastDistance = 0.0f;
 	private float _radius = 0.0f;
 
 	private float currentVerticalSpeed;
 	private float currentHorizontalSpeed;
+
+	public bool debugActive = false;
+
+    private void Awake()
+    {
+		_startposition = transform.position;
+		_radius = Mathf.Clamp(transform.position.z, _minZoom, _maxZoom);
+	}
+
+    private void OnEnable()
+    {
+		transform.position = _startposition;
+		_radius = Mathf.Clamp(transform.position.z, _minZoom, _maxZoom);
+	}
+
+    public void SetSpeeds(float vMinSpeed, float vMaxSpeed, float hMinSpeed, float hMaxSpeed, float zoom, float zoomMin, float zoomMax, float delta)
+	{
+		_minVerticalSpeed = vMinSpeed;
+		_minHorizontalSpeed = hMinSpeed;
+
+		_maxVerticalSpeed = vMaxSpeed;
+		_maxHorizontalSpeed = hMaxSpeed;
+
+		_zoomValue = zoom;
+		_minZoom = zoomMin;
+		_maxZoom = zoomMax;
+
+		_minDistanceForHorizontalScroll = _maxDistanceForHorizontalScroll = _minDistanceForVerticalScroll = _maxDistanceForVerticalScroll = delta;
+	}
 
 	private void Scroll()
 	{

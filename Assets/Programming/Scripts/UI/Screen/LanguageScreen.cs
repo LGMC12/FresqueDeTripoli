@@ -21,9 +21,6 @@ public class LanguageScreen : ScreenUI
 		_french.OnPlay += French;
 		_arabic.OnPlay += Arabic;
 		_english.OnPlay += English;
-
-		//_arabic.GetComponentInChildren<TextMeshProUGUI>().text = ArabicSupport.ArabicFixer.Fix(_arabic.GetComponentInChildren<TextMeshProUGUI>().text);
-		print(_arabic.GetComponentInChildren<TextMeshProUGUI>().text);
 	}
 
 	private void English()
