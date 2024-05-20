@@ -60,7 +60,7 @@ public class ControllableObject : MonoBehaviour
 
 	private void Scroll()
 	{
-		if (Input.touchCount != 1) return;
+		if ((Input.touchCount != 1 && !Input.GetMouseButton(0)) || debugActive) return;
 
 		currentVerticalSpeed = Mathf.Lerp(_minVerticalSpeed, _maxVerticalSpeed, _radius / (_maxZoom + Mathf.Abs(_minZoom)));
 		currentHorizontalSpeed = Mathf.Lerp(_minHorizontalSpeed, _maxHorizontalSpeed, _radius / (_maxZoom + Mathf.Abs(_minZoom)));
@@ -82,10 +82,33 @@ public class ControllableObject : MonoBehaviour
 			* Time.deltaTime
 			* currentVerticalSpeed;
 		}
+
+		if (Input.GetMouseButton(0) &&
+				(ExploreModeInputManager.MouseDeltaPosition.y < _minDistanceForVerticalScroll ||
+				ExploreModeInputManager.MouseDeltaPosition.y > _maxDistanceForVerticalScroll))
+		{
+			transform.position +=
+			new Vector3(0, -ExploreModeInputManager.MouseDeltaPosition.normalized.y, 0)
+			* Time.deltaTime
+			* currentVerticalSpeed;
+		}
+
+
+
+		if (Input.GetMouseButton(0) &&
+				(ExploreModeInputManager.MouseDeltaPosition.x < _minDistanceForHorizontalScroll ||
+				ExploreModeInputManager.MouseDeltaPosition.x > _maxDistanceForHorizontalScroll))
+		{
+			transform.position +=
+			new Vector3(-ExploreModeInputManager.MouseDeltaPosition.normalized.x, 0, 0)
+			* Time.deltaTime
+			* currentHorizontalSpeed;
+		}
 	}
 
 	private void Zoom()
 	{
+#if UNITY_ANDROID
 		if (Input.touchCount != 2) return;
 
 		Touch lTouch0 = ExploreModeInputManager.TouchInput0;
@@ -104,11 +127,15 @@ public class ControllableObject : MonoBehaviour
 				_radius += _zoomValue;
 			}
 
-			_radius = Mathf.Clamp(_radius, _minZoom, _maxZoom);
-			transform.position = Vector3.forward * _radius;
-
 			_lastDistance = lCurrentDistance;
 		}
+#else
+
+		_radius += -Input.mouseScrollDelta.y * _zoomValue;
+#endif
+
+		_radius = Mathf.Clamp(_radius, _minZoom, _maxZoom);
+		transform.position = new Vector3(transform.position.x, transform.position.y, _radius);
 	}
 
 	void Update()
