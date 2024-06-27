@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum ELanguage
@@ -22,5 +24,19 @@ public class LocalizationManager : MonoBehaviour
 			_currentLanguage = value;
 			OnLanguageChanged?.Invoke();
 		}
+    }
+
+	[SerializeField] public TMP_FontAsset _arabicFont;
+	[SerializeField] public TMP_FontAsset _latinFont;
+
+	private static LocalizationManager _instance;
+	public static LocalizationManager instance
+	{
+		get => _instance;
+	}
+
+    private void Awake()
+    {
+        _instance = this;
     }
 }

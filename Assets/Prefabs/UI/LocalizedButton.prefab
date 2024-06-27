@@ -280,8 +280,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 78b424ad2d619e6448ab8a1c5c30a56b, type: 2}
+    - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203984381183416496, guid: 6fed481ca0be4c24189b101674079516, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8643081366148450954, guid: 78b424ad2d619e6448ab8a1c5c30a56b, type: 2}
     - target: {fileID: 3992322294056313595, guid: 6fed481ca0be4c24189b101674079516, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

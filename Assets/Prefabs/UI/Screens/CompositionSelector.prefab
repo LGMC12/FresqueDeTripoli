@@ -405,7 +405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[0]
-      value: Composition 5
+      value: Foire
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[1]
@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[2]
-      value: Composition 5
+      value: Fair
       objectReference: {fileID: 0}
     - target: {fileID: 2364545308547285368, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: m_Name
@@ -532,6 +532,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4667144169825191718}
     m_Modifications:
+    - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
+      propertyPath: _text.Array.data[0]
+      value: Vieille Ville 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
+      propertyPath: _text.Array.data[2]
+      value: Old Town 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2364545308547285368, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: m_Name
       value: CompositionButton
@@ -1156,7 +1164,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[0]
-      value: Composition 2
+      value: Vieille Ville 2
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[1]
@@ -1164,7 +1172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[2]
-      value: Composition 2
+      value: Old Town 2
       objectReference: {fileID: 0}
     - target: {fileID: 2364545308547285368, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: m_Name
@@ -1285,7 +1293,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[0]
-      value: Composition 3
+      value: Ville Moderne 1
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[1]
@@ -1293,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[2]
-      value: Composition 3
+      value: Modern City 1
       objectReference: {fileID: 0}
     - target: {fileID: 2364545308547285368, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: m_Name
@@ -1543,7 +1551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[0]
-      value: Composition 9
+      value: Bordures
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[1]
@@ -1551,7 +1559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[2]
-      value: Composition 9
+      value: Borders
       objectReference: {fileID: 0}
     - target: {fileID: 2364545308547285368, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: m_Name
@@ -1672,7 +1680,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[0]
-      value: Composition 4
+      value: Ville Moderne 2
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[1]
@@ -1680,7 +1688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188937059138505094, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: _text.Array.data[2]
-      value: Composition 4
+      value: Modern City 2
       objectReference: {fileID: 0}
     - target: {fileID: 2364545308547285368, guid: def3240bccf2eeb4d81f1aa93171953f, type: 3}
       propertyPath: m_Name

@@ -4,49 +4,41 @@ using UnityEngine;
 
 public class ScrollableObject : MonoBehaviour
 {
-    private RectTransform _transf;
-	[SerializeField] private float _minDistanceForVerticalScroll;
-	[SerializeField] private float _maxDistanceForVerticalScroll;
+	private RectTransform _transf;
+	
+	[SerializeField] private RectTransform _top;
+	[SerializeField] private RectTransform _bottom;
 	[SerializeField] private float _verticalSpeed = 1200.0f;
 
-	[SerializeField] private float maxHeight;
-	[SerializeField] private float minHeight;
-    private Vector3 _startPosition;
+	private float minHeight;
+	public Vector2 _startPosition;
+
+	private float _yDelda;
 
 
-    private void Awake()
-    {
-        _startPosition = transform.position;
-    }
+	private void Awake()
+	{
+		_transf = GetComponent<RectTransform>();
+		_startPosition = _transf.anchoredPosition;
+	}
 
-    private void OnEnable()
-    {
-        transform.position = _startPosition;
-    }
+	private void OnEnable()
+	{
+		_transf.anchoredPosition = _startPosition;
+		minHeight = Camera.main.WorldToViewportPoint(_top.position).y;
+		print(minHeight);
+	}
 
-    void Update()
-    {
-        if (Input.touchCount != 1 && !Input.GetMouseButton(0)) return;
+	void Update()
+	{
+		_yDelda = ExploreModeInputManager.TouchInput0.deltaPosition.normalized.y;
 
-        if (ExploreModeInputManager.TouchInput0.deltaPosition.y > _maxDistanceForVerticalScroll ||
-            ExploreModeInputManager.TouchInput0.deltaPosition.y < _minDistanceForVerticalScroll)
-        {
-            transform.position +=
-            new Vector3(0, ExploreModeInputManager.TouchInput0.deltaPosition.normalized.y, 0)
-            * Time.deltaTime
-            * _verticalSpeed;
-        }
+        if ((Camera.main.WorldToViewportPoint(_bottom.position).y >= 0 && _yDelda > 0)
+			|| (Camera.main.WorldToViewportPoint(_top.position).y <= minHeight && _yDelda < 0)) return;
 
-        if (Input.GetMouseButton(0) &&
-                (ExploreModeInputManager.MouseDeltaPosition.y < _minDistanceForVerticalScroll ||
-                ExploreModeInputManager.MouseDeltaPosition.y > _maxDistanceForVerticalScroll))
-        {
-            transform.position +=
-            new Vector3(0, -ExploreModeInputManager.MouseDeltaPosition.normalized.y, 0)
-            * Time.deltaTime
-            * _verticalSpeed;
-        }
-
-        //transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, minHeight, maxHeight), transform.position.z);
+        if (Input.touchCount == 1)
+		{
+			_transf.anchoredPosition += new Vector2(0, _yDelda) * Time.deltaTime * _verticalSpeed;
+		}
     }
 }

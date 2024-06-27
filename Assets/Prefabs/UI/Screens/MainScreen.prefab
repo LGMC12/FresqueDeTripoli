@@ -715,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[0]
-      value: JOUER
+      value: Jouer
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[1]
@@ -723,7 +723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[2]
-      value: PLAY
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 7468529446064141196, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: m_Pivot.x
@@ -860,7 +860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[0]
-      value: EXPLORER
+      value: Explorer
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[1]
@@ -868,7 +868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[2]
-      value: EXPLORE
+      value: Explore
       objectReference: {fileID: 0}
     - target: {fileID: 7468529446064141196, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: m_Pivot.x
@@ -1133,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[0]
-      value: "\xC0 PROPOS"
+      value: "\xC0 Propos"
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[1]
@@ -1141,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5005402241723795895, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: _text.Array.data[2]
-      value: ABOUT
+      value: About
       objectReference: {fileID: 0}
     - target: {fileID: 7468529446064141196, guid: 725cdf7f5119c794e90d9f9df040ca5b, type: 3}
       propertyPath: m_Pivot.x

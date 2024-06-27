@@ -16,10 +16,10 @@ public class ControllableObject : MonoBehaviour
 	[SerializeField] private float _maxZoom = 500.0f;
 
 	[Header("Distance for scrolling")]
-	[SerializeField] private float _minDistanceForHorizontalScroll;
-	[SerializeField] private float _maxDistanceForHorizontalScroll;
-	[SerializeField] private float _minDistanceForVerticalScroll;
-	[SerializeField] private float _maxDistanceForVerticalScroll;
+	[SerializeField] private float _minDistanceForHorizontalScroll = 5.0f;
+	[SerializeField] private float _maxDistanceForHorizontalScroll = 5.0f;
+	[SerializeField] private float _minDistanceForVerticalScroll = 5.0f;
+	[SerializeField] private float _maxDistanceForVerticalScroll = 5.0f;
 
 	private Vector3 _startposition;
 
@@ -58,8 +58,9 @@ public class ControllableObject : MonoBehaviour
 		_minDistanceForHorizontalScroll = _maxDistanceForHorizontalScroll = _minDistanceForVerticalScroll = _maxDistanceForVerticalScroll = delta;
 	}
 
-	private void Scroll()
+	private void Scroll(bool pCanScroll)
 	{
+		if (!pCanScroll) return;
 		if ((Input.touchCount != 1 && !Input.GetMouseButton(0)) || debugActive) return;
 
 		currentVerticalSpeed = Mathf.Lerp(_minVerticalSpeed, _maxVerticalSpeed, _radius / (_maxZoom + Mathf.Abs(_minZoom)));
@@ -93,8 +94,6 @@ public class ControllableObject : MonoBehaviour
 			* currentVerticalSpeed;
 		}
 
-
-
 		if (Input.GetMouseButton(0) &&
 				(ExploreModeInputManager.MouseDeltaPosition.x < _minDistanceForHorizontalScroll ||
 				ExploreModeInputManager.MouseDeltaPosition.x > _maxDistanceForHorizontalScroll))
@@ -106,10 +105,10 @@ public class ControllableObject : MonoBehaviour
 		}
 	}
 
-	private void Zoom()
+	private bool Zoom()
 	{
 #if UNITY_ANDROID
-		if (Input.touchCount != 2) return;
+		if (Input.touchCount != 2) return true;
 
 		Touch lTouch0 = ExploreModeInputManager.TouchInput0;
 		Touch lTouch1 = ExploreModeInputManager.TouchInput1;
@@ -136,11 +135,11 @@ public class ControllableObject : MonoBehaviour
 
 		_radius = Mathf.Clamp(_radius, _minZoom, _maxZoom);
 		transform.position = new Vector3(transform.position.x, transform.position.y, _radius);
+		return false;
 	}
 
 	void Update()
 	{
-		Zoom();
-		Scroll();
+		Scroll(Zoom());
 	}
 }

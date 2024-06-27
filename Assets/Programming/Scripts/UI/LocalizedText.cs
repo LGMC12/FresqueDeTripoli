@@ -13,8 +13,8 @@ public class LocalizedText : MonoBehaviour
 
 	private Dictionary<ELanguage, string> _localizedItem;
 
-    private void Awake()
-    {
+	private void Awake()
+	{
 		_localizedItem = new Dictionary<ELanguage, string>()
 		{
 			{ELanguage.French, _text[0]},
@@ -23,22 +23,30 @@ public class LocalizedText : MonoBehaviour
 		};
 
 		LocalizationManager.OnLanguageChanged += LocalizationManager_OnLanguageChanged;
-    }
-
-    private void LocalizationManager_OnLanguageChanged()
-	{
-		if (LocalizationManager.CurrentLanguage == ELanguage.Arabic)
-			_textMeshPro.text = ArabicFixer.Fix(_localizedItem[LocalizationManager.CurrentLanguage]);
-		else
-			_textMeshPro.text = _localizedItem[LocalizationManager.CurrentLanguage];
 	}
 
-    void Start()
+	private void LocalizationManager_OnLanguageChanged()
+	{
+		if (LocalizationManager.CurrentLanguage == ELanguage.Arabic)
+		{
+			_textMeshPro.text = ArabicFixer.Fix(_localizedItem[LocalizationManager.CurrentLanguage]);
+			//_textMeshPro.font = LocalizationManager.instance._arabicFont;
+			//_textMeshPro.characterSpacing = -5;
+		}
+		else
+		{
+			_textMeshPro.text = _localizedItem[LocalizationManager.CurrentLanguage];
+			//_textMeshPro.font = LocalizationManager.instance._latinFont;
+			//_textMeshPro.characterSpacing = 0;
+		}
+	}
+
+	void Start()
 	{
 		//LocalizationManager_OnLanguageChanged();
 	}
 
-    private void OnDestroy()
+	private void OnDestroy()
 	{
 		LocalizationManager.OnLanguageChanged -= LocalizationManager_OnLanguageChanged;
 	}
