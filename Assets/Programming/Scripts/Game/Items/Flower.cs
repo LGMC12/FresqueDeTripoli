@@ -11,10 +11,4 @@ public class Flower : HarvestableObject
     {
 
     }
-
-    public override void OnCollisionWithPlayer()
-    {
-        base.OnCollisionWithPlayer();
-        onHarvest?.Invoke(this);
-    }
 }
