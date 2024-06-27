@@ -40,29 +40,28 @@ public class PlayModeInputManager : MonoBehaviour
 		}
 	}
 
-	public Vector3 Direction
+	public Vector2 Direction
 	{
 		get
 		{
-			Vector3 lDir = Vector3.zero;
-#if UNITY_ANDROID
+			Vector2 lDir = Vector2.zero;
 
-			Vector3 lDelta = TouchInput0.deltaPosition.normalized;
+			Vector2 lDelta = TouchInput0.deltaPosition.normalized;
 
-            if (Mathf.Abs(lDelta.x) > Mathf.Abs(lDelta.y))
-            {
-				lDir = new Vector3(Mathf.RoundToInt(TouchInput0.deltaPosition.normalized.x), 0, 0);
+			if (Input.touchCount == 0)
+			{
+				lDir = new Vector2(Convert.ToInt32(Input.GetKey(KeyCode.D)) - Convert.ToInt32(Input.GetKey(KeyCode.Q)),
+					Convert.ToInt32(Input.GetKey(KeyCode.Z)) - Convert.ToInt32(Input.GetKey(KeyCode.S)));
 			}
-            else
-            {
-				lDir = new Vector3(0, Mathf.RoundToInt(TouchInput0.deltaPosition.normalized.y), 0);
+			else if (Mathf.Abs(lDelta.x) > Mathf.Abs(lDelta.y))
+			{
+				lDir = -new Vector2(Mathf.RoundToInt(TouchInput0.deltaPosition.normalized.x), 0);
 			}
-#endif
-#if UNITY_EDITOR
-			lDir = new Vector3(Convert.ToInt32(Input.GetKey(KeyCode.D)) - Convert.ToInt32(Input.GetKey(KeyCode.Q)),
-				Convert.ToInt32(Input.GetKey(KeyCode.Z)) - Convert.ToInt32(Input.GetKey(KeyCode.S)), 0);
+			else
+			{
+				lDir = -new Vector2(0, Mathf.RoundToInt(TouchInput0.deltaPosition.normalized.y));
+			}
 
-#endif
 			return lDir;
 		}
 	}
