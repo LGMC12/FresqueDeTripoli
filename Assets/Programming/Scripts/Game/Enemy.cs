@@ -1,14 +1,14 @@
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Enemy : MovableObject
+
+public class Enemy : MovableObject, IInteractable
 {
-    [Header("Animations")]
-    [SerializeField] private string _appearTrigger;
-    [SerializeField] private string _disappearTrigger;
-    protected override void MoveAndRotate()
+    public void Interacting()
     {
-        
+
     }
 }
