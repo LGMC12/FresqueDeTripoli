@@ -25,8 +25,8 @@ public class Level : MonoBehaviour
 	[SerializeField] protected GameObject m_flowers;
 
 	[Header("Shops")]
-	[SerializeField] private GameObject _startShop;
-	[SerializeField] private List<GameObject> _shops = new List<GameObject>();
+	[SerializeField] protected Shop m_startShop;
+	[SerializeField] protected List<Shop> m_shopsList = new List<Shop>();
 
 	[Header("Doors")]
 	[SerializeField] protected List<GameObject> m_doorsList = new List<GameObject>();
@@ -82,6 +82,29 @@ public class Level : MonoBehaviour
 		m_seedsCount = m_seeds.transform.childCount; 
 		m_cheesesCount = m_cheeses.transform.childCount;
 		m_addsCount = m_adds.transform.childCount;
+        switch (m_phase)
+        {
+            case EGamePhase.Seeds:
+                foreach (Shop pShop in m_shopsList)
+                {
+                    pShop.CancelSeedTransition();
+                }
+                break;
+            case EGamePhase.Cheeses:
+                foreach (Shop pShop in m_shopsList)
+                {
+                    pShop.CancelCheeseTransition();
+                }
+                break;
+            case EGamePhase.Adds:
+                foreach (Shop pShop in m_shopsList)
+                {
+                    pShop.CancelAddTransition();
+                }
+                break;
+            default:
+                break;
+        }
     }
 
 	protected virtual void HarvestableObject_OnHarvested(HarvestableObject pHarvested)
@@ -92,12 +115,33 @@ public class Level : MonoBehaviour
 		{
 			case E_HarvestableType.Seed:
 				--m_seedsCount;
+				if (m_seedsCount == 0)
+				{
+					foreach (Shop pShop in m_shopsList)
+					{
+						pShop.DoSeedTransition();
+					}
+				}
 					break;
 			case E_HarvestableType.Cheese:
 				--m_cheesesCount;
+                if (m_cheesesCount == 0)
+                {
+                    foreach (Shop pShop in m_shopsList)
+                    {
+                        pShop.DoCheeseTransition();
+                    }
+                }
                 break;
 			case E_HarvestableType.Adds:
 				--m_addsCount;
+                if (m_addsCount == 0)
+                {
+                    foreach (Shop pShop in m_shopsList)
+                    {
+                        pShop.DoAddTransition();
+                    }
+                }
                 break;
 			default:
 				break;
@@ -105,12 +149,25 @@ public class Level : MonoBehaviour
 
 	}
 
+	public virtual void SaveLevelProgression(Shop pShop)
 	{
+		HarvestableObject pHarvested;
+
+		for (int i = m_toDestroy.Count - 1; i >= 0; i--)
+		{
+			pHarvested = m_toDestroy[i];
+			pHarvested.transform.parent = null;
+			Destroy(pHarvested.gameObject);
+		}
+
+		m_toDestroy.Clear();
 
 
+		RespawnPoint = pShop.spawnPoint;
 
-
-
+		LevelManager.Instance.Player.PauseMovement();
+		CheckNextPhase();
+	}
 
 	public virtual void	CheckNextPhase()
 	{
@@ -118,12 +175,15 @@ public class Level : MonoBehaviour
 		{
 			case EGamePhase.Seeds:
 				if (m_seeds.transform.childCount == 0) CheesePhase();
+				else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowSeed(m_seedsCount, m_totalSeeds));
 				break;
 			case EGamePhase.Cheeses:
 				if (m_cheeses.transform.childCount == 0) AddsPhase();
+				else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowCheese(m_cheesesCount, m_totalCheeses));
 				break;
 			case EGamePhase.Adds:
 				if (m_adds.transform.childCount == 0) LevelClear();
+				else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowAdds(m_addsCount, m_totalAdds));
 				break;
 			default:
 				break;
@@ -144,6 +204,10 @@ public class Level : MonoBehaviour
 
 		OnSeedPhaseComplete?.Invoke();
 
+        foreach (Shop pShop in m_shopsList)
+        {
+            pShop.Cheese();
+        }
     }
 
 	protected virtual void AddsPhase()
@@ -155,6 +219,10 @@ public class Level : MonoBehaviour
 
 		m_hiddenTraps.gameObject.SetActive(true);
 		m_hiddableTraps.gameObject.SetActive(false);
+        foreach (Shop pShop in m_shopsList)
+        {
+            pShop.Adds();
+        }
     }
 
 	protected virtual void LevelClear()
