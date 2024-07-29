@@ -14,7 +14,7 @@ public class LocalizationManager : MonoBehaviour
 {
 	public static Action OnLanguageChanged;
 
-	private static ELanguage _currentLanguage = ELanguage.Arabic;
+	private static ELanguage _currentLanguage = ELanguage.French;
 
 	public static ELanguage CurrentLanguage
     {
@@ -38,5 +38,16 @@ public class LocalizationManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+		_newLanguage = _currentLanguage;
+        OnLanguageChanged?.Invoke();
     }
+
+	[Space]
+	[SerializeField] private ELanguage _newLanguage;
+
+	[ContextMenu("Change Language")]
+	public void ChangeLanguage()
+	{
+		CurrentLanguage = _newLanguage;
+	}
 }

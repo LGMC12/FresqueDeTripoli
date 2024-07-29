@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-	[SerializeField] private GameObject _compo;
+	//[SerializeField] private GameObject _compo;
 
 	private static UIManager _instance;
 	public static UIManager Instance { get => _instance; private set { _instance = value; } }
@@ -19,56 +19,45 @@ public class UIManager : MonoBehaviour
 	private static ScreenUI _currentScreen;
 	public static ScreenUI CurrentScreen { get => _currentScreen; private set { _currentScreen = value; } }
 
-	void Start()
+	private static bool _hasSplashDone = false;
+
+	void Awake()
 	{
-		for (int i = 0; i < ScreenChannelList.Count; i++)
+		if (Instance != null) { Destroy(gameObject); }
+
+		_instance = this;
+
+        ScreenList.Clear();
+
+        for (int i = 0; i < ScreenChannelList.Count; i++)
 		{
 			ScreenList.Add(ScreenChannelList[i], ScreenUIList[i]);
 		}
-
-		SetCurrentScreen(ScreenChannel.SPLASH);
-		UIScreen.Open(ScreenChannel.SPLASH);
 
 		SplashScreenAnimationEvent.OnClosed += Splash_Close;
 
 		LanguageScreen.OnLanguageSelected += SelectedLanguage;
 
 		MainScreen.OnPlay += StartGame;
-		MainScreen.OnExplore += StartExplore;
-		MainScreen.OnAbout += Open_About;
 		MainScreen.OnSettings += OpenSettings;
 
 		SettingsScreen.OnBack += CloseSettings;
-
-		AboutScreen.OnBack += CloseAbout;
-
-		CompositionSelector.OnBack += CloseCompositionSelector;
-		CompositionSelector.OnCompositionSelected += OpenCompostionHud;
-
-		CompositionHud.OnBack += CloseCompositionHud;
 	}
 
-    private void OpenCompostionHud(int obj)
+    private void Start()
     {
-		UIScreen.Close(ScreenChannel.MAIN1);
-		UIScreen.Open(ScreenChannel.HUD1);
-    }
-
-    private void CloseCompositionHud()
-    {
-		UIScreen.Close(ScreenChannel.HUD1);
-		UIScreen.Open(ScreenChannel.MAIN1);
-    }
-
-    private void CloseCompositionSelector()
-    {
-		UIScreen.Close(ScreenChannel.MAIN1);
-		UIScreen.Open(ScreenChannel.MAIN0);
-    }
-
-    private void CloseAbout()
-    {
-		UIScreen.Close(ScreenChannel.OTHER1);
+		if (_hasSplashDone)
+        {
+            SetCurrentScreen(ScreenChannel.MAIN0);
+            UIScreen.Open(ScreenChannel.MAIN0);
+			print("main menu");
+        }
+		else
+        {
+            SetCurrentScreen(ScreenChannel.SPLASH);
+            UIScreen.Open(ScreenChannel.SPLASH);
+			print("splash");
+        }
     }
 
     private void CloseSettings()
@@ -81,20 +70,10 @@ public class UIManager : MonoBehaviour
 		UIScreen.Open(ScreenChannel.OPTION0);
     }
 
-    private void Open_About()
-	{
-		UIScreen.Open(ScreenChannel.OTHER1);
-	}
-
-	private void StartExplore()
-	{
-		UIScreen.Close(ScreenChannel.MAIN0);
-		UIScreen.Open(ScreenChannel.MAIN1);
-	}
-
 	private void StartGame()
 	{
 		SceneManager.LoadScene(1, LoadSceneMode.Single);
+		UIScreen.Close(ScreenChannel.MAIN0);
 	}
 
 	private void SelectedLanguage()
@@ -107,6 +86,7 @@ public class UIManager : MonoBehaviour
 	{
 		UIScreen.Close(ScreenChannel.SPLASH);
 		UIScreen.Open(ScreenChannel.OTHER0);
+		_hasSplashDone = true;
 	}
 
 	public static void SetCurrentScreen(ScreenChannel pScreen)
@@ -124,17 +104,8 @@ public class UIManager : MonoBehaviour
 		LanguageScreen.OnLanguageSelected -= SelectedLanguage;
 
 		MainScreen.OnPlay -= StartGame;
-		MainScreen.OnExplore -= StartExplore;
-		MainScreen.OnAbout -= Open_About;
 		MainScreen.OnSettings -= OpenSettings;
 
 		SettingsScreen.OnBack -= CloseSettings;
-
-		AboutScreen.OnBack -= CloseAbout;
-
-		CompositionSelector.OnBack -= CloseCompositionSelector;
-		CompositionSelector.OnCompositionSelected -= OpenCompostionHud;
-
-		CompositionHud.OnBack -= CloseCompositionHud;
 	}
 }
