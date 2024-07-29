@@ -61,6 +61,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -123,7 +124,7 @@ MonoBehaviour:
   buttons: []
 --- !u!95 &104784281224942074
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,7 +141,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5162842611328656502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fresque-de-Tripoli
+  m_text: "PAC-KAKK\xC9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 78b424ad2d619e6448ab8a1c5c30a56b, type: 2}
   m_sharedMaterial: {fileID: -8643081366148450954, guid: 78b424ad2d619e6448ab8a1c5c30a56b, type: 2}
