@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class Zone : MonoBehaviour
 {
-	[SerializeField] private Transform _appearPoint;
+	[SerializeField] private List<Transform> _appearPointsList = new List<Transform>();
 	[SerializeField] private int _nMaxEnemies = 1;
 	private int _nEnemies = 0;
-	private List<Enemy> _enemyList = new List<Enemy>();
+	private List<DeadPixel> _enemyList = new List<DeadPixel>();
 
-    private void Start()
-    {
-		
-    }
+	public Transform AppearPoint
+	{ get => _appearPointsList[Random.Range(0, _appearPointsList.Count)]; }
+
+	public bool CheckEnemyEntrance(DeadPixel pEnemy)
+	{
+		if (_nEnemies < _nMaxEnemies)
+		{
+			++_nEnemies;
+			_enemyList.Add(pEnemy);
+			return true;
+		}
+
+		return false;
+	}
+
+	public void EnemyTeleporting(DeadPixel pEnemy)
+	{
+		--_nEnemies;
+		_enemyList.Remove(pEnemy);
+	}
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2374317456262027125}
   - component: {fileID: 8751993536109973692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1616647945
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -142400867
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.28627452, g: 0.20784314, b: 0.11372549, a: 1}
   m_FlipX: 0
@@ -94,7 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8111406085903639217}
   - component: {fileID: 8111406085903639219}
-  m_Layer: 0
+  - component: {fileID: 6918508107819840466}
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +140,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6918508107819840466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111406085903639216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d6dde548c0452469bfe6f869011093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 8751993536109973692}
 --- !u!1 &9095353146646558130
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3972669319777971098}
   - component: {fileID: 576717884069980555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
