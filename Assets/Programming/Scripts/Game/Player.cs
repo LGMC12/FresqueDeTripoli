@@ -7,25 +7,38 @@ public class Player : MovableObject
 {
     private void Awake()
     {
-		Level.InitPlayerPosition += InitPosition;
-    }
-
-    private void InitPosition(Vector3 pPosition)
-    {
-		transform.position = pPosition;
-    }
-
-	protected override void MoveAndRotate()
+	private void Awake()
 	{
-		_rb.velocity = _direction * _speed;
+		Level.InitPlayerPosition += InitPosition;
+		Level.OnSeedPhaseComplete += SetSeedAnimator;
+	}
+
+	private void InitPosition(Vector3 pPosition)
+	{
+		InputManager.Instance.BlockInput();
+		transform.position = pPosition;
+		InputManager.Instance.UnlockInput();
+	}
+
+	protected override void Move()
+	{
+		m_rb.velocity = m_direction * m_speed;
 	}
 
 	private void SetDirection()
-    {
-        if (PlayModeInputManager.Instance.Direction != Vector2.zero)
-        {
-			_direction = PlayModeInputManager.Instance.Direction;
+	{
+		if (InputManager.Instance.Direction == Vector2.zero) return;
+
+		if (InputManager.Instance.Direction != Vector2.zero)
+		{
+			m_direction = InputManager.Instance.Direction;
 		}
+
+
+		if (m_direction.x >= 0 && m_direction.y == 0) m_animator.SetTrigger(_rightTrigger);
+		if (m_direction.x <= 0 && m_direction.y == 0) m_animator.SetTrigger(_leftTrigger);
+		if (m_direction.x == 0 && m_direction.y >= 0) m_animator.SetTrigger(_upTrigger);
+		if (m_direction.x == 0 && m_direction.y <= 0) m_animator.SetTrigger(_downTrigger);
 	}
 
 	void Update()
@@ -33,12 +46,12 @@ public class Player : MovableObject
 		SetDirection();
 	}
 
-    private void LateUpdate()
-    {
-		MoveAndRotate();
-    }
 
-    private void OnTriggerEnter2D(Collider2D pCollided)
+	private void Update()
+	{
+		SetDirection();
+		Move();
+	}
 	{
 		IInteractable pInteractable;
 

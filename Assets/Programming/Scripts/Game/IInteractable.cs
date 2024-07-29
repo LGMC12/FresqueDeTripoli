@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public interface IInteractable
+public interface IInteractable 
 {
     public void Interacting();
 }
