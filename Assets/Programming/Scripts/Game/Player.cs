@@ -1,12 +1,23 @@
+using DG.Tweening;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MovableObject
 {
-    private void Awake()
-    {
+	public static Action OnDeath;
+
+	[Header("Animations trigger")]
+	[SerializeField] private string _upTrigger;
+	[SerializeField] private string _downTrigger;
+	[SerializeField] private string _leftTrigger;
+	[SerializeField] private string _rightTrigger;
+	[SerializeField] private string _deathTrigger;
+	[SerializeField] private string _reviveTrigger;
+
+	[Header("Animators")]
+	[SerializeField] private RuntimeAnimatorController _baseAnimator;
+	[SerializeField] private RuntimeAnimatorController _seedAnimator;
+
 	private void Awake()
 	{
 		Level.InitPlayerPosition += InitPosition;
@@ -41,9 +52,20 @@ public class Player : MovableObject
 		if (m_direction.x == 0 && m_direction.y <= 0) m_animator.SetTrigger(_downTrigger);
 	}
 
-	void Update()
+	public void PauseMovement()
 	{
-		SetDirection();
+		InputManager.Instance.BlockInput();
+		m_direction = Vector2.zero;
+	}
+
+	public void ResetAnimator()
+	{
+		m_animator.runtimeAnimatorController = _baseAnimator;
+	}
+
+	private void SetSeedAnimator()
+	{
+		m_animator.runtimeAnimatorController = _seedAnimator;
 	}
 
 
@@ -52,6 +74,7 @@ public class Player : MovableObject
 		SetDirection();
 		Move();
 	}
+
 	private void OnTriggerEnter2D(Collider2D pCollided)
 	{
 		IInteractable pInteractable;
@@ -86,6 +109,11 @@ public class Player : MovableObject
 		transform.DOMove(LevelManager.Level.RespawnPoint, 0f).SetDelay(1.2f).OnComplete(() => { Revive(); });
 	}
 
+	public void Revive()
+	{
+		InputManager.Instance.UnlockInput();
+		m_collider.gameObject.SetActive(true); 
+		m_animator.SetTrigger(_rightTrigger);
 	}
 
 	private void OnDestroy()
