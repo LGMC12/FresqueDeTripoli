@@ -52,6 +52,7 @@ public class Player : MovableObject
 		SetDirection();
 		Move();
 	}
+	private void OnTriggerEnter2D(Collider2D pCollided)
 	{
 		IInteractable pInteractable;
 
@@ -59,15 +60,37 @@ public class Player : MovableObject
 		{
 			pInteractable.Interacting();
 		}
-
 	}
 
-    private void OnCollisionEnter2D(Collision2D pCollided)
-    {
-
-	}
-
-    private void OnDestroy()
+	private void OnCollisionEnter2D(Collision2D pCollided)
 	{
+		Enemy pEnemy = pCollided.collider.gameObject.transform.GetComponentInParent<Enemy>();
+
+		if (pEnemy != null) Death();
+	}
+
+	private void Death()
+	{
+		PauseMovement();
+
+		m_collider.gameObject.SetActive(false);
+
+		m_animator.SetTrigger(_deathTrigger);
+
+		OnDeath?.Invoke();
+	}
+
+	public void Dead()
+	{
+		transform.DOMove(LevelManager.Level.RespawnPoint, 0.2f).OnComplete(() => { m_animator.SetTrigger(_reviveTrigger); });
+		transform.DOMove(LevelManager.Level.RespawnPoint, 0f).SetDelay(1.2f).OnComplete(() => { Revive(); });
+	}
+
+	}
+
+	private void OnDestroy()
+	{
+		Level.InitPlayerPosition -= InitPosition;
+		Level.OnSeedPhaseComplete -= SetSeedAnimator;
 	}
 }
