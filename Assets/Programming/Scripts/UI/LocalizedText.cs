@@ -39,11 +39,13 @@ public class LocalizedText : MonoBehaviour
 			//_textMeshPro.font = LocalizationManager.instance._latinFont;
 			//_textMeshPro.characterSpacing = 0;
 		}
+
+		print(name);
 	}
 
 	void Start()
 	{
-		//LocalizationManager_OnLanguageChanged();
+		LocalizationManager_OnLanguageChanged();
 	}
 
 	private void OnDestroy()
