@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 291423164355485216}
   - component: {fileID: 291423164355485217}
-  - component: {fileID: 8048834563822892479}
+  - component: {fileID: 280332648306732145}
   - component: {fileID: 6377455927005763524}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: DialogSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8048834563822892479
+--- !u!114 &280332648306732145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,14 +67,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 291423164355485222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364026b237bbdef42a5c59f75a4bd911, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1a847ea4846a646bac8b035235b743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_collider: {fileID: 3657448969373907025}
+  m_collider: {fileID: 4881950463379712634}
   m_renderer: {fileID: 4765702397274506908}
   m_animator: {fileID: 6377455927005763524}
-  m_harvestParticles: {fileID: 5365648952163916381}
-  _harvestableType: 3
 --- !u!95 &6377455927005763524
 Animator:
   serializedVersion: 5
@@ -85,7 +83,7 @@ Animator:
   m_GameObject: {fileID: 291423164355485222}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b9cc1e6bbe65ce2438f9fa7f546a0699, type: 2}
+  m_Controller: {fileID: 9100000, guid: 475ef41c15a14e74a80bebbcd83ffaf0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4993,7 +4991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5676386403402113210}
-  - component: {fileID: 3657448969373907025}
+  - component: {fileID: 4881950463379712634}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -5016,7 +5014,7 @@ Transform:
   m_Father: {fileID: 291423164355485216}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3657448969373907025
+--- !u!61 &4881950463379712634
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5115,7 +5113,7 @@ SpriteRenderer:
   m_SortingLayerID: 1616647945
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e7fdddcdf61e1b49a24e4a53e8ce590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 912df9e1fb8f51b4eb81d9f4e30f2998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
