@@ -7,7 +7,8 @@ public enum E_HarvestableType
 {
 	Seed,
 	Cheese,
-	flower
+	Adds,
+	Flower
 }
 
 public class HarvestableObject : AnimatedObject, IInteractable
@@ -22,21 +23,18 @@ public class HarvestableObject : AnimatedObject, IInteractable
 		get => _harvestableType;
 	}
 
-    public void Interacting()
-    {
-        m_harvestParticles.Play();
-        _renderer.color = new Color(1, 1, 1, 0);
-        _collider.gameObject.SetActive(false);
-        StartCoroutine(WaitUntilParticlesEnd());
+	public void Interacting()
+	{
+		m_harvestParticles.Play();
+		m_renderer.color *= new Color(1, 1, 1, 0);
+		m_collider.gameObject.SetActive(false);
+
+        OnHarvested?.Invoke(this);
     }
 
-    public virtual IEnumerator WaitUntilParticlesEnd()
+	public void Respawn()
     {
-        yield return new WaitWhile(() => m_harvestParticles.IsAlive(false));
-
-		transform.parent = null;
-        StopAllCoroutines();
-        OnHarvested?.Invoke(this);
-        yield break;
+		m_renderer.color += new Color(0, 0, 0, 1);
+        m_collider.gameObject.SetActive(true);
     }
 }
