@@ -51,6 +51,16 @@ public class Level : MonoBehaviour
 	protected List<HarvestableObject> m_toDestroy = new List<HarvestableObject>();
 
 	public Vector3 RespawnPoint {  get; protected set; }
+
+	protected int m_seedsCount = 0;
+	protected int m_cheesesCount = 0;
+	protected int m_addsCount = 0;
+	
+	protected int m_totalSeeds = 0;
+	protected int m_totalCheeses = 0;
+	protected int m_totalAdds = 0;
+
+
 	protected virtual void Awake()
 	{
 		HarvestableObject.OnHarvested += HarvestableObject_OnHarvested;
@@ -65,9 +75,15 @@ public class Level : MonoBehaviour
 		m_totalCheeses = m_cheesesCount = m_cheeses.transform.childCount;
 		m_totalAdds = m_addsCount = m_adds.transform.childCount;
 
+		Hud.Instance.SetMax(m_totalSeeds, m_totalCheeses, m_totalAdds);
+		Hud.Instance.UpdateTxt(m_seedsCount, m_cheesesCount, m_addsCount);
+		Hud.Instance.OnSaved(m_seedsCount, m_cheesesCount, m_addsCount);
+
 		InitPlayerPosition?.Invoke(m_startShop.transform.position);
 
 		m_enemies.SetActive(true);
+
+		Hud.Instance.Start();
 	}
 
 	private void Player_OnDeath()
@@ -82,6 +98,9 @@ public class Level : MonoBehaviour
 		m_seedsCount = m_seeds.transform.childCount; 
 		m_cheesesCount = m_cheeses.transform.childCount;
 		m_addsCount = m_adds.transform.childCount;
+
+		Hud.Instance.UpdateTxt(m_seedsCount, m_cheesesCount, m_addsCount);
+
         switch (m_phase)
         {
             case EGamePhase.Seeds:
@@ -147,6 +166,7 @@ public class Level : MonoBehaviour
 				break;
 		}
 
+		Hud.Instance.UpdateTxt(m_seedsCount, m_cheesesCount, m_addsCount);
 	}
 
 	public virtual void SaveLevelProgression(Shop pShop)
@@ -162,6 +182,7 @@ public class Level : MonoBehaviour
 
 		m_toDestroy.Clear();
 
+		Hud.Instance.OnSaved(m_seedsCount, m_cheesesCount, m_addsCount);
 
 		RespawnPoint = pShop.spawnPoint;
 
@@ -204,6 +225,9 @@ public class Level : MonoBehaviour
 
 		OnSeedPhaseComplete?.Invoke();
 
+		Hud.Instance.ShowCheeses(); 
+		Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowCheese(m_cheesesCount, m_totalCheeses));
+
         foreach (Shop pShop in m_shopsList)
         {
             pShop.Cheese();
@@ -219,6 +243,10 @@ public class Level : MonoBehaviour
 
 		m_hiddenTraps.gameObject.SetActive(true);
 		m_hiddableTraps.gameObject.SetActive(false);
+
+		Hud.Instance.ShowAdds(); 
+		Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowAdds(m_addsCount, m_totalAdds));
+
         foreach (Shop pShop in m_shopsList)
         {
             pShop.Adds();
