@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum E_HarvestableType
@@ -18,6 +16,8 @@ public class HarvestableObject : AnimatedObject, IInteractable
 	[SerializeField] protected ParticleSystem m_harvestParticles;
 
 	[SerializeField] private E_HarvestableType _harvestableType;
+
+	[SerializeField] protected AudioSource m_sfx;
 	public E_HarvestableType HarvestableType
 	{
 		get => _harvestableType;
@@ -28,7 +28,9 @@ public class HarvestableObject : AnimatedObject, IInteractable
 		m_harvestParticles.Play();
 		m_renderer.color *= new Color(1, 1, 1, 0);
 		m_collider.gameObject.SetActive(false);
-
+		
+		m_sfx.Play();
+		
         OnHarvested?.Invoke(this);
     }
 

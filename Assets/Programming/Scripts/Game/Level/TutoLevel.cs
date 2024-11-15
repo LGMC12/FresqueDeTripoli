@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TutoLevel : Level
@@ -10,11 +8,9 @@ public class TutoLevel : Level
         {
             case EGamePhase.Seeds:
                 if (m_seeds.transform.childCount == 0) CheesePhase();
-                else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowSeed(m_seedsCount, m_totalSeeds));
                 break;
             case EGamePhase.Cheeses:
                 if (m_cheeses.transform.childCount == 0) LevelClear();
-                else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowCheese(m_cheesesCount, m_totalCheeses));
                 break;
             default:
                 break;
@@ -34,9 +30,6 @@ public class TutoLevel : Level
         m_phase = EGamePhase.Cheeses;
 
         OnSeedPhaseComplete?.Invoke();
-
-        Hud.Instance.ShowCheeses();
-        Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowCheese(m_cheesesCount, m_totalCheeses));
 
         foreach (Shop pShop in m_shopsList)
         {

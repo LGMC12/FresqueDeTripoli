@@ -17,6 +17,8 @@ public class Level : MonoBehaviour
 	public static Action OnSeedPhaseComplete;
 
 	protected EGamePhase m_phase = EGamePhase.Seeds;
+	
+	public EGamePhase Phase { get { return m_phase; } set { m_phase = value; } }
 
 	[Header("Harvestables")]
 	[SerializeField] protected GameObject m_seeds;
@@ -47,6 +49,10 @@ public class Level : MonoBehaviour
 	[Header("Traps")]
 	[SerializeField] protected GameObject m_hiddenTraps;
 	[SerializeField] protected GameObject m_hiddableTraps;
+	
+	[Space]
+	[Header("Sounds")]
+	[SerializeField] protected AudioSource m_musicLoop;
 
 	protected List<HarvestableObject> m_toDestroy = new List<HarvestableObject>();
 
@@ -67,26 +73,25 @@ public class Level : MonoBehaviour
 		Player.OnDeath += Player_OnDeath;
 
 		m_zonesList = m_zones.GetComponentsInChildren<Zone>().ToList();
+		
+		m_musicLoop.Play();
 	}
 
-	private void OnEnable()
+	protected virtual void OnEnable()
 	{
 		m_totalSeeds = m_seedsCount = m_seeds.transform.childCount;
 		m_totalCheeses = m_cheesesCount = m_cheeses.transform.childCount;
-		m_totalAdds = m_addsCount = m_adds.transform.childCount;
+		m_totalAdds = m_addsCount = m_adds.transform.childCount + m_flowers.transform.childCount;
 
 		Hud.Instance.SetMax(m_totalSeeds, m_totalCheeses, m_totalAdds);
 		Hud.Instance.UpdateTxt(m_seedsCount, m_cheesesCount, m_addsCount);
-		Hud.Instance.OnSaved(m_seedsCount, m_cheesesCount, m_addsCount);
 
 		InitPlayerPosition?.Invoke(m_startShop.transform.position);
 
 		m_enemies.SetActive(true);
-
-		Hud.Instance.Start();
 	}
 
-	private void Player_OnDeath()
+	protected virtual void Player_OnDeath()
 	{
 		foreach (HarvestableObject pHarvested in m_toDestroy)
 		{
@@ -97,7 +102,7 @@ public class Level : MonoBehaviour
 
 		m_seedsCount = m_seeds.transform.childCount; 
 		m_cheesesCount = m_cheeses.transform.childCount;
-		m_addsCount = m_adds.transform.childCount;
+		m_addsCount = m_adds.transform.childCount + m_flowers.transform.childCount;
 
 		Hud.Instance.UpdateTxt(m_seedsCount, m_cheesesCount, m_addsCount);
 
@@ -182,11 +187,8 @@ public class Level : MonoBehaviour
 
 		m_toDestroy.Clear();
 
-		Hud.Instance.OnSaved(m_seedsCount, m_cheesesCount, m_addsCount);
-
 		RespawnPoint = pShop.spawnPoint;
 
-		LevelManager.Instance.Player.PauseMovement();
 		CheckNextPhase();
 	}
 
@@ -196,27 +198,30 @@ public class Level : MonoBehaviour
 		{
 			case EGamePhase.Seeds:
 				if (m_seeds.transform.childCount == 0) CheesePhase();
-				else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowSeed(m_seedsCount, m_totalSeeds));
 				break;
 			case EGamePhase.Cheeses:
 				if (m_cheeses.transform.childCount == 0) AddsPhase();
-				else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowCheese(m_cheesesCount, m_totalCheeses));
 				break;
 			case EGamePhase.Adds:
 				if (m_adds.transform.childCount == 0) LevelClear();
-				else Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowAdds(m_addsCount, m_totalAdds));
 				break;
 			default:
+				print("show");
 				break;
 		}
 	}
 
+	protected virtual void OpenDoors()
+	{
+        foreach (GameObject pDoor in m_doorsList)
+        {
+            pDoor.SetActive(false);
+        }
+    }
+
 	protected virtual void CheesePhase()
 	{
-		foreach (GameObject pDoor in m_doorsList)
-		{
-			pDoor.SetActive(false);
-		}
+		OpenDoors();
 
 		m_baseBG.gameObject.SetActive(false);
 		m_openBG.gameObject.SetActive(true);
@@ -224,9 +229,6 @@ public class Level : MonoBehaviour
 		m_phase = EGamePhase.Cheeses;
 
 		OnSeedPhaseComplete?.Invoke();
-
-		Hud.Instance.ShowCheeses(); 
-		Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowCheese(m_cheesesCount, m_totalCheeses));
 
         foreach (Shop pShop in m_shopsList)
         {
@@ -244,9 +246,6 @@ public class Level : MonoBehaviour
 		m_hiddenTraps.gameObject.SetActive(true);
 		m_hiddableTraps.gameObject.SetActive(false);
 
-		Hud.Instance.ShowAdds(); 
-		Hud.Instance.ShopUI.StartCoroutine(Hud.Instance.ShopUI.ShowAdds(m_addsCount, m_totalAdds));
-
         foreach (Shop pShop in m_shopsList)
         {
             pShop.Adds();
@@ -262,6 +261,11 @@ public class Level : MonoBehaviour
 
 	protected virtual void OnDestroy()
 	{
+		for (int i = 0; i < m_enemies.transform.childCount; i++)
+		{
+			Destroy(m_enemies.transform.GetChild(i));
+		}
+		
 		HarvestableObject.OnHarvested -= HarvestableObject_OnHarvested;
 		Player.OnDeath -= Player_OnDeath;
 	}
