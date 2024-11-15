@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMFunds.UI;
+using UnityEngine;
 
 public class UIScreenAnimationEvent : MonoBehaviour
 {
