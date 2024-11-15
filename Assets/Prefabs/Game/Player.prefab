@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -512353181
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ac04d7197cd4ee04187d31b7a6a73e43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c9a3860cb3907640a3d483027bc27d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -191,8 +191,19 @@ MonoBehaviour:
   _rightTrigger: right
   _deathTrigger: dead
   _reviveTrigger: revive
-  _baseAnimator: {fileID: 9100000, guid: f995625dd24e1e74fa1b5371632a6feb, type: 2}
-  _seedAnimator: {fileID: 9100000, guid: b975086f97f9e8a45a5653fd1a7daaa3, type: 2}
+  _baseAnimator: {fileID: 9100000, guid: 584150061ceb516489068bbd7b90de40, type: 2}
+  _seedAnimator: {fileID: 9100000, guid: 8f3fe6923dcca414cb5bb2e0fa57906d, type: 2}
+  _minAngle: 45
+  _maxAngle: 135
+  _anglesList:
+  - 22.5
+  - 67.5
+  - 112.5
+  - 157.5
+  - 202.5
+  - 247.5
+  - 292.5
+  - 337.5
 --- !u!50 &97954021700185643
 Rigidbody2D:
   serializedVersion: 4
@@ -224,7 +235,7 @@ Animator:
   m_GameObject: {fileID: 97954021700185687}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f995625dd24e1e74fa1b5371632a6feb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 584150061ceb516489068bbd7b90de40, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

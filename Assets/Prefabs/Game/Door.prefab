@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 8751993536109973692}
+  _hiddenInGame: 1
 --- !u!1 &9095353146646558130
 GameObject:
   m_ObjectHideFlags: 0
