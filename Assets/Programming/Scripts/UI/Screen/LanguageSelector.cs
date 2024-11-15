@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using ArabicSupport;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
-using ArabicSupport;
 
 public class LanguageSelector : MonoBehaviour
 {

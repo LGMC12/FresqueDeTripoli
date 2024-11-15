@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using ArabicSupport;
 using TMPro;
+using UnityEngine;
 
 
 public class LocalizedText : MonoBehaviour
@@ -30,17 +30,17 @@ public class LocalizedText : MonoBehaviour
 		if (LocalizationManager.CurrentLanguage == ELanguage.Arabic)
 		{
 			_textMeshPro.text = ArabicFixer.Fix(_localizedItem[LocalizationManager.CurrentLanguage]);
-			//_textMeshPro.font = LocalizationManager.instance._arabicFont;
+			_textMeshPro.font = LocalizationManager.instance._arabicFont;
+			_textMeshPro.isRightToLeftText = true;
 			//_textMeshPro.characterSpacing = -5;
 		}
 		else
 		{
 			_textMeshPro.text = _localizedItem[LocalizationManager.CurrentLanguage];
-			//_textMeshPro.font = LocalizationManager.instance._latinFont;
+			_textMeshPro.font = LocalizationManager.instance._latinFont;
+			_textMeshPro.isRightToLeftText = false;
 			//_textMeshPro.characterSpacing = 0;
 		}
-
-		print(name);
 	}
 
 	void Start()

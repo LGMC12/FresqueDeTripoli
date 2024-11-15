@@ -11,7 +11,7 @@ namespace TMFunds.UI
         [Header("Screen")]
         [SerializeField] private ScreenChannel channel;
         [SerializeField] private Animator animator;
-        [SerializeField] private string animatorPrompt;
+        [SerializeField] private string animatorPrompt = "show";
         public ScreenChannel Channel => channel;
 
         [Header("Panel")]

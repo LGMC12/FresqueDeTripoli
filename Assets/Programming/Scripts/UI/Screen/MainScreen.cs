@@ -7,31 +7,42 @@ namespace Com.IsartDigital.Chaource
 	public class MainScreen : ScreenUI
 	{
 		public static Action OnPlay;
-		public static Action OnSettings;
+		public static Action OnFresco;
+
+		[SerializeField] private string _instaUrl;
+
+		[SerializeField] private LocalizedURL _aboutUrl;
 
 		[SerializeField] private AnimatedButton _play;
-		[SerializeField] private AnimatedButton _settings;
+		[SerializeField] private AnimatedButton _fresco;
+		[SerializeField] private AnimatedButton _about;
+		[SerializeField] private AnimatedButton _insta;
 
-		// Start is called before the first frame update
+
 		protected override void Start()
 		{
 			base.Start();
 
 			_play.OnPlay += StartGame;
-			_settings.OnPlay += Settings;
+			_fresco.OnPlay += Fresco;
+			_about.OnPlay += About;
+			_insta.OnPlay += Insta;
 		}
 
 		private void StartGame() { OnPlay?.Invoke(); }
-
-		private void Settings() { OnSettings?.Invoke(); }
+		private void Fresco() { OnFresco?.Invoke(); }
+		private void About() { Application.OpenURL(_aboutUrl.URL); }
+		private void Insta() { Application.OpenURL(_instaUrl); }
 
 
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
 
-			_play.OnPlay -= StartGame;
-			_settings.OnPlay -= Settings;
-		}
+            _play.OnPlay -= StartGame;
+            _fresco.OnPlay -= Fresco;
+            _about.OnPlay -= About;
+            _insta.OnPlay -= Insta;
+        }
 	}
 }

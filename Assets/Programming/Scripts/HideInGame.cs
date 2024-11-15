@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class HideInGame : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _renderer;
+	[SerializeField] private SpriteRenderer _renderer;
+	[SerializeField] private bool _hiddenInGame = true;
 
-    private void Awake()
-    {
-        _renderer.color *= new Color(1,1,1,0);
-    }
+	private void Awake()
+	{
+		if(_hiddenInGame) _renderer.enabled = false;
+	}
 }

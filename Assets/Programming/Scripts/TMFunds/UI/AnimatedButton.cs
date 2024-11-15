@@ -9,8 +9,10 @@ namespace TMFunds.UI
 
         [Header("Juiciness")]
         [SerializeField] protected Animator animator;
-        [SerializeField] private string buttonShowPrompt;
-        [SerializeField] private string clickPrompt;
+        [SerializeField] private string buttonShowPrompt = "show";
+        [SerializeField] private string clickPrompt = "click";
+
+        [SerializeField] private AudioSource _sfx;
         protected override void OnTriggerIn()
         {
             animator.SetBool(buttonShowPrompt, true);
@@ -23,6 +25,7 @@ namespace TMFunds.UI
 
         protected override void Clicking()
         {
+            _sfx.Play();
             animator.SetTrigger(clickPrompt);
             StartCoroutine(DestroyAfter(animator.GetCurrentAnimatorClipInfo(0)[0].clip.length));
         }

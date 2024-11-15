@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ArabicSupport;
 using TMFunds.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class LanguageScreen : ScreenUI
 {
@@ -21,7 +22,10 @@ public class LanguageScreen : ScreenUI
 		_french.OnPlay += French;
 		_arabic.OnPlay += Arabic;
 		_english.OnPlay += English;
-	}
+
+		_arabic.GetComponentInChildren<TextMeshProUGUI>().text = ArabicFixer.Fix(_arabic.GetComponentInChildren<TextMeshProUGUI>().text);
+
+    }
 
 	private void English()
 	{
