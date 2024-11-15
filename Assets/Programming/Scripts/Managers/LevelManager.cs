@@ -7,7 +7,9 @@ public class LevelManager : MonoBehaviour
 {
 	public List<Level> levels = new List<Level>();
 
-	[SerializeField] private int _currentLevelIndex = -1;
+	[SerializeField] public int _startLevelIndex = 0;
+	public static int StartIndex = 0;
+	private int _currentLevelIndex = 0;
 	[SerializeField] private static Level _currentLevel;
 
 	[SerializeField] private Player _player;
@@ -21,30 +23,35 @@ public class LevelManager : MonoBehaviour
 	private void Awake()
 	{
 		Instance = this;
+		
 		Level.OnLevelClear += Level_OnLevelClear;
-		Hud.OnTransitionDone += NextLevel;
-		Hud.OnTutoDone += TutoDone;
+		
+		LevelTransition.OnLevelTransitionAnimDone += NextLevel;
+		LevelTransition.OnFirstLevelStartAnimDone += TutoDone;
+		
+		_currentLevelIndex = _startLevelIndex = StartIndex;
 	}
 
     private void TutoDone()
     {
+	    UIManager.tutoFinished = true;
         _currentLevel = Instantiate(levels[_currentLevelIndex]);
     }
 
     private void Start()
 	{
-		Hud.Instance.StartCoroutine(Hud.Instance.TutoStart());
+		LevelTransition.Instance.StartCoroutine(LevelTransition.Instance.FirstLevelStartAnim(_startLevelIndex));
 		Player.PauseMovement();
 	}
 
     private void Update()
     {
-        //if (Input.GetKeyUp(KeyCode.N)) Level_OnLevelClear();
+        if (Input.GetKeyUp(KeyCode.N)) Level_OnLevelClear();
     }
 
     private void Level_OnLevelClear()
 	{
-		Hud.Instance.StartCoroutine(Hud.Instance.LevelTransition());
+		LevelTransition.Instance.StartCoroutine(LevelTransition.Instance.LevelTransitionAnim());
 	}
 
 	private void NextLevel()
@@ -56,15 +63,19 @@ public class LevelManager : MonoBehaviour
         {
             _currentLevel = Instantiate(levels[_currentLevelIndex]);
             _player.ResetAnimator();
-			Hud.Instance.StartCoroutine(Hud.Instance.LevelStart(_currentLevelIndex));
+            LevelTransition.Instance.StartCoroutine(LevelTransition.Instance.LevelStartAnim(_currentLevelIndex));
         }
-		else Hud.Instance.StartCoroutine(Hud.Instance.EndGame());
+        else
+        {
+	        EndGame.Instance.StartCoroutine(EndGame.Instance.EndGameAnim());
+        }
 	}
 
 	private void OnDestroy()
 	{
 		Level.OnLevelClear -= Level_OnLevelClear;
-		Hud.OnTransitionDone -= NextLevel;
-        Hud.OnTutoDone -= TutoDone;
+		
+		LevelTransition.OnLevelTransitionAnimDone -= NextLevel;
+		LevelTransition.OnFirstLevelStartAnimDone -= TutoDone;
     }
 }
